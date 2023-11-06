@@ -12,7 +12,9 @@ window.addEventListener("load", function() {
 	// Play Button -> Play the video and update the volume information.  
 	document.querySelector("#play").addEventListener("click", function() {
 		console.log("Play Video");
+		document.getElementById("volume").textContent = video.volume * 100 + "%";
 		video.play();
+
 	});
 	
 	// Pause Button -> Pause the video.
@@ -67,7 +69,7 @@ window.addEventListener("load", function() {
 	document.querySelector("#slider").addEventListener("change", function() {
 
 		video.volume = document.getElementById("slider").value / 100;
-		document.getElementById("volume").textContent = video.volume * 100 + " %";
+		document.getElementById("volume").textContent = video.volume * 100 + "%";
 		console.log("Volume has changed!");
 	});
 	
