@@ -71,9 +71,15 @@ window.addEventListener("load", function() {
 	
 	
 	// Styled -> Utilize the existing oldSchool class on the video element
+	document.getElementById("vintage").addEventListener("click", function() {
+        video.classList.add("oldSchool");
+    });
 	
 	
 	// Original -> Remove the oldSchool class from the video.
+	document.getElementById("orig").addEventListener("click", function() {
+        video.classList.remove("oldSchool");
+    });
 	
 	
 	// use canvas resources on the video DOM and listeners 
