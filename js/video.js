@@ -49,11 +49,14 @@ window.addEventListener("load", function() {
 		if (video.muted){
 			video.muted = false;
 			console.log("Video unmuted")
-			document.getElementById("mute").value = "Mute";
+			document.getElementById("mute").textContent = "Mute";
+			document.getElementById("volume").textContent = document.getElementById("slider").value + "%";
 		} else {
 			video.muted = true;
 			console.log("Video muted");
-			document.getElementById("mute").value = "Unmute";
+			document.getElementById("mute").textContent = "Unmute";
+			document.getElementById("volume").textContent = 0 * 100 + "%";
+
 			
 		}
 	});
@@ -61,7 +64,7 @@ window.addEventListener("load", function() {
 	
 	
 	// Volume Slider -> Change the volume based on the slider and update the volume information.
-	video.addEventListener("volumechange", function() {
+	document.querySelector("#slider").addEventListener("change", function() {
 
 		video.volume = document.getElementById("slider").value / 100;
 		document.getElementById("volume").textContent = video.volume * 100 + " %";
